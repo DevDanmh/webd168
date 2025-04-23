@@ -15,7 +15,6 @@
       margin: 0; /* Removes default margin from the list */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
       padding: 20px; /* Adds padding inside the card */
-      width: 150px; /* Sets a fixed width for each card */
     }
 
     .week2 {
@@ -25,7 +24,6 @@
       margin: 0; /* Removes default margin from the list */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
       padding: 20px; /* Adds padding inside the card */
-      width: 150px; /* Sets a fixed width for each card */
     }
     .week3 {
       background-color: #e8967d;
@@ -34,7 +32,6 @@
       margin: 0; /* Removes default margin from the list */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
       padding: 20px; /* Adds padding inside the card */
-      width: 150px; /* Sets a fixed width for each card */
     }
 
     .misc {
@@ -44,17 +41,24 @@
       margin: 0; /* Removes default margin from the list */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
       padding: 20px; /* Adds padding inside the card */
-      width: 150px; /* Sets a fixed width for each card */
     }
     nav ul li {
       margin: 5px 0;
     }
-    .container {
-      display: flex; /* Enables flexbox layout for the container */
-      flex-wrap: wrap; /* Allows the cards to wrap onto multiple lines if necessary */
-      gap: 20px; /* Adds space between the cards */
-      justify-content: center; /* Centers the cards horizontally within the container */
-      padding: 20px; /* Adds padding around the container */
+
+    @media (max-width: 768px) {
+      .container > div {
+        width: 200px; /* Set each flex item to have a fixed width of 200px */
+        height: 200px; /* Set each flex item to have a fixed height of 200px */
+        box-sizing: border-box; /* Ensure padding and borders are included in the width */
+      }
+      .container {
+        display: flex; /* Enables flexbox layout for the container */
+        flex-wrap: wrap; /* Allows the cards to wrap onto multiple lines if necessary */
+        gap: 20px; /* Adds space between the cards */
+        justify-content: center; /* Centers the cards horizontally within the container */
+        padding: 20px; /* Adds padding around the container */
+      }
     }
   </style>
 
