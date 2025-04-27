@@ -7,39 +7,27 @@
     <title>WEBD168 Directory</title>
   </head>
   <style>
-    .week1 {
-      background-color: #9be6e0;
+    .container > div {
       border-radius: 5px;
       list-style-type: none;
       margin: 0; /* Removes default margin from the list */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
       padding: 20px; /* Adds padding inside the card */
+      margin-bottom: 20px; /* Adds space between the cards */
+    }
+    .week1 {
+      background-color: #9be6e0;
     }
 
     .week2 {
       background-color: #b17de8;
-      border-radius: 5px;
-      list-style-type: none;
-      margin: 0; /* Removes default margin from the list */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
-      padding: 20px; /* Adds padding inside the card */
     }
     .week3 {
       background-color: #e8967d;
-      border-radius: 5px;
-      list-style-type: none;
-      margin: 0; /* Removes default margin from the list */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
-      padding: 20px; /* Adds padding inside the card */
     }
 
     .misc {
       background-color: #e2e69b;
-      border-radius: 5px;
-      list-style-type: none;
-      margin: 0; /* Removes default margin from the list */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Adds a subtle shadow effect to the card */
-      padding: 20px; /* Adds padding inside the card */
     }
     nav ul li {
       margin: 5px 0;
@@ -50,6 +38,7 @@
         width: 200px; /* Set each flex item to have a fixed width of 200px */
         height: 200px; /* Set each flex item to have a fixed height of 200px */
         box-sizing: border-box; /* Ensure padding and borders are included in the width */
+        margin-bottom: 0; /* Adds space between the cards */
       }
       .container {
         display: flex; /* Enables flexbox layout for the container */
