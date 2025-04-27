@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      nav li {
+        float: left;
+      }
+
+      nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      nav li a:hover {
+        background-color: #111;
+      }
+      form {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      form input,
+      form textarea,
+      form button {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      form button {
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #111;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #333;
+        color: white;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      table tr:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+      />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Write your message"
+      ></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Our Services</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Web Design</td>
+          <td>Custom website design tailored to your needs</td>
+          <td>$500</td>
+        </tr>
+        <tr>
+          <td>SEO Optimization</td>
+          <td>Improve your website's search engine ranking</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>Maintenance</td>
+          <td>Ongoing support and updates for your site</td>
+          <td>$100/month</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

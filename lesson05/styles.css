@@ -1,0 +1,115 @@
+* {
+  /* Reset margin and padding for all elements */
+  margin: 0;
+  padding: 0;
+  /* Use border-box model for all elements so padding and border are included in the element's total width/height */
+  box-sizing: border-box;
+}
+
+/* Basic styles for the root element and body */
+html {
+  /* Set base font size to 100%, which is 16px by default */
+  font-size: 100%;
+  /* Line height of 1.5 for readability */
+  line-height: 1.5;
+}
+
+body {
+  /* Apply the Google Font "Source Sans Pro" to the entire body */
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Main container for the content section */
+section {
+  display: flex; /* df */
+  flex-wrap: wrap; /* fw - Allow items to wrap to the next line if necessary */
+  max-width: 1200px; /* maw1200 - Set a maximum width for the section */
+  margin: 0 auto; /* m0-auto - Center the section horizontally and set top and bottom margin to 0. Note: Element should have a defined width. */
+  padding: 2em; /* p2em - Add padding of 2em on all sides */
+}
+
+/* Styles for the aside (sidebar) element */
+aside {
+  flex: 1 1 25%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 25% - Allow the aside to grow and shrink, with a base width of 25% */
+  background-color: #ededed; /* bgc#ededed - Light gray background color */
+  padding: 1.25rem; /* p1.25rem - Padding of 1.25rem on all sides */
+  margin-left: 1rem; /* ml1rem - Left margin of 1rem */
+  border-radius: 12px; /* brds12px - Rounded corners with a radius of 12px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+}
+
+aside p {
+  font-style: italic; /* fsi - Italicize the text in the aside paragraph */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Styles for the article element */
+article {
+  flex: 1 1 65%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 65% - Allow the article to grow and shrink, with a base width of 65% */
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%; /* maw100p - Set maximum width to 100% of parent element */
+  height: auto; /* h:a - Maintain aspect ratio of images */
+  margin-right: 1rem; /* mr1rem - Right margin of 1rem */
+  margin-bottom: 1rem; /* mb1rem - Bottom margin of 1rem */
+  float: left; /* fl:l - Float images to the left */
+  padding-right: 1rem; /* pr1rem - Right padding of 1rem */
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.5rem; /* fsz2.5rem - Font size of 2.5rem for main heading */
+  margin-bottom: 0.5rem; /* mb0.5rem - Bottom margin of 0.5rem */
+}
+
+h2 {
+  font-size: 2rem; /* fsz2rem - Font size of 2rem for subheadings */
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 1.5rem; /* mb1.5rem - Bottom margin of 1.5rem */
+}
+
+/* Media Queries */
+
+/* Media query for screens smaller than or equal to 768px */
+@media (max-width: 768px) {
+  /* Stack the aside and article elements vertically on small screens */
+  section {
+    flex-direction: column; /* Change the flex direction to column for stacking */
+  }
+
+  /* Move aside to the bottom by changing its order */
+  aside {
+    flex: 1 1 100%; /* Allow the aside to take full width on small screens */
+    margin-left: 0; /* Remove left margin */
+    width: 80%; /* Set width to 80% for better alignment */
+    padding: 1.5rem; /* Increase padding for better spacing */
+  }
+
+  /* Make the article take up the full width */
+  article {
+    flex: 1 1 100%; /* Allow the article to take full width on small screens */
+  }
+}
+
+/* Media query for screens smaller than or equal to 480px (extra small screens) */
+@media (max-width: 480px) {
+  /* Decrease the font size of the main heading for smaller screens */
+  h1 {
+    font-size: 2rem; /* fsz2rem - Font size of 2rem for main heading */
+  }
+
+  /* Decrease the font size of subheadings for smaller screens */
+  h2 {
+    font-size: 1.75rem; /* fsz1.75rem - Font size of 1.75rem for subheadings */
+  }
+
+  /* Decrease the font size of paragraphs for smaller screens */
+  p {
+    font-size: 0.9rem; /* fsz0.9rem - Font size of 0.9rem for paragraphs */
+  }
+}
