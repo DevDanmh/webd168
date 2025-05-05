@@ -1,0 +1,337 @@
+/* =======================
+   Global Styles
+======================= */
+
+/* Apply universal reset and box-sizing */
+* {
+  margin: 0;
+  /* Remove default margin for all elements */
+  padding: 0;
+  /* Remove default padding for all elements */
+  box-sizing: border-box;
+  /* Ensure padding and border are included in width/height */
+}
+
+/* Base HTML styles */
+html {
+  font-size: 100%;
+  /* Base font size (usually 16px) */
+  line-height: 1.5;
+  /* Better text readability */
+}
+
+/* Body styles */
+body {
+  background: url(images/turtle.jpg) no-repeat top left fixed;
+  /* Set background image */
+  background-size: cover;
+  /* Cover entire viewport */
+  font-family: "Lato", sans-serif;
+  /* Set base font */
+  padding-top: 4rem;
+  /* Add space for fixed navbar */
+}
+
+/* Body padding when mobile menu is open */
+body.menu-open main {
+  margin-top: 12rem;
+  /* Extra space to prevent header from being covered by menu */
+  overflow: hidden;
+  /* Optional: prevent background scrolling when menu is open */
+}
+
+/* =======================
+   Headings
+======================= */
+
+/* Common heading styles */
+h1,
+h2 {
+  font-family: "Zilla Slab", serif;
+  /* Use serif font for emphasis */
+  color: #fff;
+  /* White text color */
+  text-shadow: -0.1rem 0.1rem 0 rgba(0, 0, 0, 0.3);
+  /* Subtle shadow for contrast */
+}
+
+/* Secondary heading styles */
+h2 {
+  margin-bottom: 0.375rem;
+  /* Spacing below h2 */
+  font-size: 1.5rem;
+  /* Size for h2 */
+  font-weight: 300;
+  /* Light font weight */
+}
+
+/* =======================
+   Links and Images
+======================= */
+
+/* Anchor tag styles */
+a {
+  color: #000;
+  /* Set link color to black */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+/* Image styles */
+img {
+  display: block;
+  /* Remove inline spacing */
+  width: 100%;
+  /* Scale image to container width */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+/* =======================
+   Header Section
+======================= */
+
+/* Header container styles */
+header {
+  margin-left: 5.5rem;
+  /* Position from left */
+  padding: 2.5rem;
+  /* Inner padding */
+  width: 50%;
+  /* Half-page width */
+}
+
+/* Header title (h1) styles */
+header h1 {
+  font-size: 2.4rem;
+  /* Large heading size */
+  margin-bottom: 0.625rem;
+  /* Space below title */
+}
+
+/* =======================
+   Navbar Section
+======================= */
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #aae1f9;
+  padding: 1rem;
+}
+
+/* Navbar list (desktop) */
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style: none;
+  text-transform: uppercase;
+  position: static;
+}
+
+/* Individual navbar list items */
+.navbar li {
+  margin-right: 1rem;
+}
+
+/* Navbar link styles */
+.navbar a {
+  color: #fff;
+}
+
+/* Style links inside list items */
+.navbar li a {
+  display: block;
+  padding: 0.5rem rem;
+}
+
+/* Hover effect for navbar links */
+.navbar li a:hover {
+  background: #79a3e3;
+}
+
+/* =======================
+   Hamburger Menu (Mobile)
+======================= */
+
+/* Hamburger icon (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hamburger bars */
+.bar {
+  width: 25px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* =======================
+   Main Content
+======================= */
+
+/* Main layout container */
+main {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto; /* m0-auto */
+}
+
+/* =======================
+   Cards Grid Layout
+======================= */
+
+/* Container for cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1.25rem;
+}
+
+/* Individual card */
+.card {
+  margin-bottom: 2rem;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Card link hover effect */
+.card:hover {
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.8);
+}
+
+/* Inner content padding */
+.card-content {
+  padding: 1.4rem;
+}
+
+/* =======================
+   Responsive Styles
+======================= */
+
+@media (max-width: 768px) {
+  /* Adjust body for smaller screens */
+  body {
+    font-size: 0.9rem;
+    padding-top: 6rem;
+  }
+  /* Responsive header */
+  header {
+    margin: 0;
+    margin-top: 5rem;
+    padding: 1.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 500;
+  }
+
+  /* Smaller header title */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Smaller subheading */
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  /* Responsive navbar menu (hidden initially) */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    background-color: #aae1f9;
+    z-index: 999;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar ul:hover {
+    color: purple;
+  }
+
+  /* Show menu when active class is added */
+  .navbar ul.active {
+    display: flex;
+  }
+
+  /* Show hamburger icon on small screens */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Single column card layout */
+  .cards {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+
+  /* Smaller card spacing */
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  /* Smaller card content padding */
+  .card-content {
+    padding: 1rem;
+  }
+}
+
+/* Media query for medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    text-align: center;
+    padding: 3rem;
+  }
+}
+
+/* =======================
+   Footer Section
+======================= */
+
+/* Footer container styles */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #292929;
+  color: #fff;
+  text-align: center;
+}
+
+footer .social-icons {
+  margin-top: 0.5rem;
+}
+
+footer .social-icons a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: color 0.5s ease;
+}
+
+footer .social-icons a:hover {
+  color: #144fd8;
+}
