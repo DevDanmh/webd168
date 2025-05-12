@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+    <title>Chapter 11 - SVG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes buttonClick {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        button.clicked {
+            animation: buttonClick 0.3s ease;
+        }
+
+        .blue-eyes .eye-color {
+            fill: #175282;
+        }
+
+        .sad .mouth {
+            transform: rotate(180deg) scale(0.5);
+            transform-origin: 340px 390px;
+        }
+
+        @keyframes moveEyes {
+            20% {
+                transform: translate(-18px, -20px);
+            }
+
+            40% {
+                transform: translate(0, 0);
+            }
+
+            65% {
+                transform: translate(18px, -20px);
+            }
+
+            100% {
+                transform: translate(18px, 0);
+            }
+        }
+
+        .move-around .inner-eye-group {
+            animation: moveEyes 12s infinite;
+        }
+
+        @keyframes leftWhiskers {
+            20% {
+                transform: rotate(5deg);
+            }
+
+            60% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        .move-around .left-whiskers {
+            animation: leftWhiskers 3s infinite;
+            transform-origin: 325px 350px;
+        }
+
+        @keyframes rightWhiskers {
+            5% {
+                transform: rotate(-2deg);
+            }
+
+            90% {
+                transform: rotate(7deg);
+            }
+        }
+
+        .move-around .right-whiskers {
+            animation: rightWhiskers 3s infinite;
+            transform-origin: 325px 350px;
+        }
+
+        @keyframes move {
+            20% {
+                transform: rotateY(10deg) rotateX(10deg);
+            }
+
+            40% {
+                transform: rotateY(25deg) rotateX(10deg);
+            }
+
+            60% {
+                transform: rotateY(-10deg) rotateX(-10deg);
+            }
+
+            85% {
+                transform: rotateY(-10deg) rotateX(-16deg);
+            }
+        }
+
+        .move-around {
+            animation: move 8s infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-t from-blue-200 to-white text-gray-800 font-serif px-4 py-6">
+
+    <h1
+        class="text-4xl font-bold text-center text-blue-900 mb-6">
+        SVG Essentials</h1>
+
+    <div
+        class="buttons flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-2 mb-10">
+        <button data-add="blue-eyes"
+            class="inline-block uppercase bg-blue-200 hover:bg-blue-300 px-4 py-2 rounded w-64 text-center">Blue
+            eyes</button>
+        <button data-remove="blue-eyes"
+            class="inline-block uppercase bg-green-200 hover:bg-green-300 px-4 py-2 rounded w-64 text-center">Green
+            eyes</button>
+        <button data-add="sad"
+            class="inline-block uppercase bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded w-64 text-center">Sad</button>
+        <button data-remove="sad"
+            class="inline-block uppercase bg-yellow-200 hover:bg-yellow-300 px-4 py-2 rounded w-64 text-center">Happy</button>
+        <button data-add="move-around"
+            class="inline-block uppercase bg-purple-200 hover:bg-purple-300 px-4 py-2 rounded w-64 text-center">Move
+            around</button>
+        <button data-remove="move-around"
+            class="inline-block uppercase bg-red-200 hover:bg-red-300 px-4 py-2 rounded w-64 text-center">Sit
+            still</button>
+    </div>
+
+
+    <div class="svg-container mx-auto max-w-4xl px-4 py-6">
+        <svg class="cat w-full h-auto" viewBox="0 0 640 480"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Cartoon Cat">
+            <path
+                d="m119.00002,184.5c0,0 11.25,-157.50001 -36,-164.25001c-47.25,-6.75 156,15.75001 159.75,96.00001c3.75,80.25 29.25,-16.5 137.25,-11.25c108.00001,5.25 53.25001,-111.75001 84.00001,-99.00001l30.24997,12.00001c0,0 81.50003,17.25 44.00003,125.25c-37.5,108 -20.25,174.75 -20.75003,174.75c-0.50003,0 47.75003,120.75 79.25003,123.75c31.5,3 -129,-5.25 -132.75,-3c-3.75,2.25 -24.75,22.50001 -77.25001,27.75001c-52.5,5.25 -167.25,-48.00001 -167.75002,-48.00001c-0.50002,0 -152.49998,35.25001 -153,35.25c-0.50002,-0.00001 116.75002,-83.25 108.50002,-107.25c-8.25,-24 -89.25,-87 -71.25,-120.75c18,-33.75 15.75,-41.25 15.75,-41.25z"
+                fill="#999999" />
+            <g transform="rotate(-10 382.5 241)">
+                <ellipse fill="#ffffff" cx="382.5" cy="241"
+                    rx="56.5" ry="84.75" />
+                <g class="inner-eye-group">
+                    <ellipse class="eye-color"
+                        fill="#1b6811" cx="382.38"
+                        cy="286.68" rx="31" ry="35" />
+                    <ellipse fill="#ffffff" cx="380.38"
+                        cy="303.68" rx="6" ry="6" />
+                </g>
+            </g>
+            <g>
+                <ellipse fill="#ffffff" cx="274.12"
+                    cy="239.32" rx="56.5" ry="84.75" />
+                <g class="inner-eye-group">
+                    <ellipse class="eye-color"
+                        fill="#1b6811" cx="274" cy="285"
+                        rx="31" ry="35" />
+                    <ellipse fill="#ffffff" cx="272"
+                        cy="302" rx="6" ry="6" />
+                </g>
+            </g>
+            <path
+                d="m295,337c2,2 25,-39 64,-7c39,32 8,13 -21,31c-29,18 -45,-26 -43,-24z"
+                fill="#fcbfdb" />
+            <path
+                d="m236,384c0,0 154,106 224,17c70,-89 -203,-2 -203,-2c0,0 -21,-15 -21,-15z"
+                fill="none" />
+            <path class="mouth"
+                d="m248.04,375.86c26.65,15.02 95.79,70.09 209.06,-1.67c113.28,-71.76 0,10.85 0,10.85c0,0 -138.26,80.94 -214.89,-1.67c-76.63,-82.61 -20.82,-22.53 5.83,-7.51z"
+                fill="#000000" />
+            <g class="left-whiskers">
+                <line x1="297" y1="353" x2="102" y2="301"
+                    stroke="#DDD" />
+                <line x1="300" y1="358" x2="105" y2="344"
+                    stroke="#DDD" />
+            </g>
+            <g class="right-whiskers">
+                <line x1="354" y1="361" x2="571" y2="296"
+                    stroke="#DDD" />
+                <line x1="363" y1="364" x2="556" y2="373"
+                    stroke="#DDD" />
+            </g>
+        </svg>
+    </div>
+    <!-- Page Content -->
+    <div
+        class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-lg leading-relaxed">
+        <p>
+            SVG, or Scalable Vector Graphics, is a powerful
+            tool in HTML for displaying graphics that are
+            resolution-independent. Unlike raster images
+            like JPEG or PNG, SVGs are defined in XML
+            markup, which means they can scale to any size
+            without losing clarity or quality. This makes
+            them ideal for responsive web design, where
+            graphics need to look sharp on both small mobile
+            screens and high-resolution desktop displays.
+            SVGs are also lightweight and can be edited
+            directly within your HTML, allowing for greater
+            control over shapes, colors, and interactivity.
+        </p>
+        <p>
+            Using SVG in your HTML files offers several
+            advantages. First, they integrate seamlessly
+            with CSS and JavaScript, enabling developers to
+            animate elements, respond to user interaction,
+            and apply dynamic styling. Second, SVGs are
+            accessible and searchable by screen readers and
+            search engines when properly labeled, improving
+            both accessibility and SEO. Finally, because
+            SVGs are text-based, they are easier to version
+            control and optimize for performance. Whether
+            you're designing icons, charts, logos, or
+            interactive illustrations, SVG provides a
+            scalable, modern solution that enhances both
+            design quality and user experience.
+        </p>
+    </div>
+
+
+    <script>
+        const buttons = document.querySelectorAll(".buttons button");
+        const catSVG = document.querySelector("svg");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const addClass = button.getAttribute("data-add");
+                const removeClass = button.getAttribute("data-remove");
+
+                if (addClass) catSVG.classList.add(addClass);
+                if (removeClass) catSVG.classList.remove(removeClass);
+
+                // Add animation class and remove it after animation ends
+                button.classList.add("clicked");
+                setTimeout(() => {
+                    button.classList.remove("clicked");
+                }, 300); // match animation duration
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
