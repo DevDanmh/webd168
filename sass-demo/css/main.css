@@ -23,6 +23,12 @@ body #bg {
             clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
   }
 }
+@media (max-width: 576px) {
+  body #bg {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
 body header a {
   color: #fff;
   text-decoration: none;

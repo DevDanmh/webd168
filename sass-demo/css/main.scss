@@ -13,14 +13,14 @@ $borders: 15px;
 $tablet: 800px;
 $mobile: 576px;
 
-@mixin tablet($tablet) {
-  @media (min-width: #{$tablet}) {
+@mixin tablet {
+  @media (min-width: 800px) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (min-width: #{$mobile}) {
+  @media (max-width: 576px) {
     @content;
   }
 }
@@ -48,8 +48,12 @@ body {
     height: 100%;
     position: absolute;
     z-index: -1;
-    @include tablet($tablet) {
+
+    @include tablet {
       clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
+    }
+    @include mobile {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
   }
 
