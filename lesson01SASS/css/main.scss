@@ -1,67 +1,65 @@
-$font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-$base-font-size: 1.05rem;
-$base-color: #000000;
-$background-color: #ffffff;
-$heading-color: #5b2828;
-$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-$image-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-$border-radius: 10px;
-$max-width: 800px;
-$content-width: 700px;
-$spacing-lg: 40px;
-$spacing-md: 20px;
+$primary-color: #3d4a57;
+$accent-color: #5f4141;
+$background-color: #b7d0e9;
+$text-color: black;
 
 body {
-  font-family: $font-stack;
-  margin: 0 auto;
-  padding: $spacing-lg;
   background-color: $background-color;
-  color: $base-color;
+  color: $text-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.75;
-  max-width: $max-width;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+}
 
-  h1,
-  h2 {
-    color: $heading-color;
-    margin-bottom: $spacing-md;
-    font-weight: 1000;
-  }
+h1,
+h2 {
+  color: $accent-color;
+  font-weight: 700;
+}
 
-  p {
-    font-size: $base-font-size;
-    margin-bottom: $spacing-md;
-    max-width: $content-width;
-  }
+h1 {
+  border-bottom: 2px solid lighten($accent-color, 20%);
+  padding-bottom: 10px;
+}
 
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: $spacing-md 0;
-    border-radius: $border-radius;
-    box-shadow: $image-shadow;
-  }
+h2 {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
 
-  ul {
-    padding-left: $spacing-md;
-    margin-bottom: $spacing-md;
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
 
-    li {
-      margin-bottom: 10px;
-      font-size: $base-font-size;
-    }
+.intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.list-group-item {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: lighten($accent-color, 40%);
+    cursor: pointer;
   }
 }
 
-@media (max-width: 600px) {
-  body {
-    padding: $spacing-md;
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 
-    p,
-    ul li {
-      font-size: 1rem;
-    }
+  .intro,
+  p,
+  .list-group-item {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
