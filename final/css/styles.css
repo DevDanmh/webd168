@@ -195,7 +195,7 @@ table {
   }
 }
 table.inventory th {
-  background-color: #007bff;
+  background-color: #3d4a57;
   color: white;
   text-transform: uppercase;
 }
@@ -209,7 +209,7 @@ table.inventory .progress {
   height: 20px;
 }
 table.inventory .progress-bar {
-  background-color: #007bff;
+  background-color: #3d4a57;
   font-weight: bold;
   font-size: 0.85rem;
   line-height: 20px;
@@ -218,6 +218,7 @@ table.inventory .progress-bar {
 
 caption {
   caption-side: top;
+  color: black;
 }
 
 .text-end {
